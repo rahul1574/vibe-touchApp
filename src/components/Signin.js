@@ -47,6 +47,16 @@ const handleCheck = () => {
     document.getElementById('open').style.display='none';
   }
 };
+const [image,setimage]=useState('eyeclose.PNG');
+const [type,settype]=useState('password');
+const handlechange=()=>{
+    setimage((previmage)=>
+       previmage==='eyeclose.PNG'?'eyeopen.PNG':'eyeclose.PNG'
+       );
+    settype((pretype)=>
+    pretype==='password'?'text':'password'
+    );
+}
 
 return (
   <div style={{height:'600px',display:'flex',flexDirection:'column',alignContent:'space-evenly',alignItems:'center',justifyContent:'space-evenly'}}>
@@ -62,13 +72,16 @@ return (
       />
     </div>
     <div style={{display:'flex',flexDirection:'column',textAlign:'end'}}>
+      <div>
       <input
-        type="text"
+        type={type}
         value={element2}
         onChange={handleElement2Change}
         placeholder="Password"
         style={{textAlign:'center'}}
       />
+      <img src={image} alt="clickable" onClick={handlechange} id="show"style={{height:'20px',width:'20px',position:'relative',right:'35px',top:'3px'}}></img>
+      </div>
       <Link to='/forgot'> Forgot password?</Link>
     </div>
     <button  onClick={handleCheck} style={{height:'40px',width:'200px',backgroundColor:'#14213d',color:'white',border:'none',borderRadius:'20px'}}>Signin</button>
