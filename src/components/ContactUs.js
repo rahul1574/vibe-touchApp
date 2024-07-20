@@ -47,7 +47,7 @@ return (
 <form ref={form}  id='form'onSubmit={sendEmail}style={{ height:'600px',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'space-evenly',color:'white'}}><h1>VIBE-TOUCH</h1>
   <h4>~Be Together</h4>
   <label>Email</label>
-  <input type="email" name="user_email" style={{textAlign:'center'}}/>
+  <input type="email" name="user_mail" style={{textAlign:'center'}}/>
   <label>username</label>
   <input type="text" name="user_name" value={inputusername} onChange={(e)=> setusername(e.target.value)} style={{textAlign:'center'}} />
   <label>password</label>
